@@ -1,0 +1,19 @@
+{
+  "name": "barneysapi",
+  "version": "1.0.0",
+  "description": "Api for Barney's Burger",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js --ignore db.json"
+  },
+  "author": "Ryan Puyat",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0",
+    "lowdb": "^7.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
