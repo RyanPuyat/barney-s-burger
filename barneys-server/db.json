@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Cream & Crave",
       "unitPrice": 3.5,
-      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751112830/creamy-mushroom_os2n9q.png",
+      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751185739/cream-and-crave_mjlfnz.png",
       "ingredients": [
         "Beef Patty",
         "Cream of Mushroom",
@@ -18,7 +18,7 @@
       "id": 2,
       "name": "Cheese Bomb",
       "unitPrice": 4,
-      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751112831/cheese-burger_erofdm.png",
+      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751185739/cheese_bomb_c8apd8.png",
       "ingredients": [
         "Beef Patty",
         "Cheddar Cheese",
@@ -34,7 +34,7 @@
       "id": 3,
       "name": "Big Bite",
       "unitPrice": 4.5,
-      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751112833/double-patty-beef-burger_idipsi.png",
+      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751185738/Big_bite_egdmfp.png",
       "ingredients": [
         "Beef Patty",
         "Onions",
@@ -51,7 +51,7 @@
       "id": 4,
       "name": "Beef & Bacon Bliss",
       "unitPrice": 3.5,
-      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751112830/creamy-mushroom_os2n9q.png",
+      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751185738/beef_baconbliss_g2tiok.png",
       "ingredients": [
         "Beef Patty",
         "Cheddar Cheese",
@@ -68,7 +68,7 @@
       "id": 5,
       "name": "Hawaiian Burger",
       "unitPrice": 3.5,
-      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751112831/hawaiian-burger_gss0ai.png",
+      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751185737/hawaiian_hxfkgl.png",
       "ingredients": [
         "Beef Patty",
         "Grilled Pineapple",
@@ -85,7 +85,7 @@
       "id": 6,
       "name": "Cluck Haven",
       "unitPrice": 3.5,
-      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751112882/chicken-paradise_frxsyc.png",
+      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751185383/cluck-haven_yi4r29.png",
       "ingredients": [
         "Grilled Chicken",
         "Mozza Cheese",
@@ -101,7 +101,7 @@
       "id": 7,
       "name": "Buffalo Blaze",
       "unitPrice": 4,
-      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751112882/buffalo-burger_tpmiqo.png",
+      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751185383/buffalo-blaze_hqtreh.png",
       "ingredients": [
         "Crispy Chicken",
         "Mozza Cheese",
@@ -117,7 +117,7 @@
       "id": 8,
       "name": "BBQ Chicken",
       "unitPrice": 4,
-      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751112884/BBQ-chicken-burger_dvfz0f.png",
+      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751185383/BBQ_Chicken_gdsv8p.png",
       "ingredients": [
         "Grilled Chicken",
         "Mozza Cheese",
@@ -132,7 +132,7 @@
       "id": 9,
       "name": "Tandoori Chicken",
       "unitPrice": 3.5,
-      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751112885/tandoori-burger_suaada.png",
+      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751185383/tandoori_qsc89e.png",
       "ingredients": [
         "Tandoori Chicken",
         "Cheddar Cheese",
@@ -147,7 +147,7 @@
       "id": 10,
       "name": "Crispy Chicken",
       "unitPrice": 3.5,
-      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751112884/crispy-chicken-burger_yjnxs0.png",
+      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751185590/crispy-chicken_lws18j.png",
       "ingredients": [
         "Crispy Chicken",
         "Cheddar Cheese",
