@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Cream & Crave",
       "unitPrice": 3.5,
-      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751185739/cream-and-crave_mjlfnz.png",
+      "imageUrl": "http://res.cloudinary.com/dyozmymsf/image/upload/cream-and-crave_mjlfnz.png",
       "ingredients": [
         "Beef Patty",
         "Cream of Mushroom",
@@ -18,7 +18,7 @@
       "id": 2,
       "name": "Cheese Bomb",
       "unitPrice": 4,
-      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/v1751185739/cheese_bomb_c8apd8.png",
+      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/cream-and-crave_mjlfnz.png",
       "ingredients": [
         "Beef Patty",
         "Cheddar Cheese",
