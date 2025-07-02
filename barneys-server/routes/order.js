@@ -1,5 +1,6 @@
 const express = require('express');
 const { db } = require('../db');
+const { nanoid } = require('nanoid');
 const router = express.Router();
 
 // get all order
@@ -23,7 +24,10 @@ router.get('/:id', async (req, res) => {
 
 //create order
 router.post('/', async (req, res) => {
-  const newOrder = req.body;
+  const newOrder = {
+    id: nanoid(10),
+    ...req.body,
+  };
 
   if (!newOrder.id || !newOrder.customer || !Array.isArray(newOrder.cart)) {
     return res.status(400).json({ status: false, error: 'Invalid orderData' });

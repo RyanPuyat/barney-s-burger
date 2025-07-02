@@ -20,7 +20,7 @@ function MainNav() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/contactus">
+          <NavLink to="/about">
             <span>About Us</span>
           </NavLink>
         </li>

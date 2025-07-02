@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { Form, redirect, useActionData, useNavigation } from 'react-router-dom';
+import { createOrder } from '../../services/apiRestaurant';
+import { PriorityFee } from '../../utils/helpers';
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -31,6 +34,10 @@ const fakeCart = [
 ];
 
 function CreateOrder() {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === 'submitting';
+
+  const formErrors = useActionData();
   // const [withPriority, setWithPriority] = useState(false);
   const cart = fakeCart;
 
@@ -38,7 +45,7 @@ function CreateOrder() {
     <div>
       <h2>Ready to order? Let's go!</h2>
 
-      <form>
+      <Form method="POST">
         <div>
           <label>First Name</label>
           <input type="text" name="customer" required />
@@ -49,6 +56,7 @@ function CreateOrder() {
           <div>
             <input type="tel" name="phone" required />
           </div>
+          {formErrors?.phone && <p>{formErrors.phone}</p>}
         </div>
 
         <div>
@@ -70,11 +78,47 @@ function CreateOrder() {
         </div>
 
         <div>
-          <button>Order now</button>
+          <input type="hidden" name="cart" value={JSON.stringify(cart)} />
+          <button disabled={isSubmitting}>
+            {isSubmitting ? 'Placing order' : 'Order now'}
+          </button>
         </div>
-      </form>
+      </Form>
     </div>
   );
+}
+
+export async function action({ request }) {
+  //formData() is a browser object
+  const formData = await request.formData();
+
+  //to convert the forData into real data
+  const data = Object.fromEntries(formData);
+
+  const cartPrice = JSON.parse(data.cart);
+  const isPriority = data.priority === 'on';
+  const estimatedDelivery = new Date(Date.now() + 30 * 60 * 1000).toISOString();
+
+  const order = {
+    ...data,
+    priority: isPriority,
+    estimatedDelivery,
+    cart: JSON.parse(data.cart),
+    orderPrice: cartPrice.reduce((sum, item) => sum + item.totalPrice, 0),
+    priorityPrice: isPriority ? PriorityFee : 0,
+  };
+
+  const errors = {};
+  if (!isValidPhone(order.phone))
+    errors.phone =
+      'Phone number is invalid. Please enter a valid phone number.';
+
+  // console.log(errors);
+  if (Object.keys(errors).length > 0) return errors;
+
+  const newOrder = await createOrder(order);
+
+  return redirect(`/order/${newOrder.id}`);
 }
 
 export default CreateOrder;

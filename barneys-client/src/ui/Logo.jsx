@@ -1,5 +1,4 @@
 import BarneysLogo from '../assets/logo.png';
-import '../../src/index.css';
 
 function Logo() {
   return (
