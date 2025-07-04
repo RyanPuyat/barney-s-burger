@@ -7,9 +7,11 @@ function Navbar() {
   const isHome = location.pathname === '/';
 
   return (
-    <div>
+    <div className="flex flex-row gap-60">
       <Logo />
+
       <MainNav />
+
       {isHome ? '' : <SearchOrder />}
     </div>
   );
