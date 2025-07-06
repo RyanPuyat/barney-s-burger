@@ -3,14 +3,14 @@ import Footer from './Footer';
 import Logo from './Logo';
 import MainNav from './MainNav';
 
-function Navbar() {
+function Navbar({ open }) {
   const isHome = location.pathname === '/';
 
   return (
-    <div className="flex flex-row gap-60">
+    <div className="flex flex-row gap-50">
       <Logo />
 
-      <MainNav />
+      <MainNav open={open} />
 
       {isHome ? '' : <SearchOrder />}
     </div>
