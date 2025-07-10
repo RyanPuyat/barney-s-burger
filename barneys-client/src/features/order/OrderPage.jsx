@@ -1,15 +1,17 @@
-import { Link } from 'react-router-dom';
+import CreateUser from '../user/CreateUser';
 
 function OrderPage() {
   return (
-    <div>
-      <h1>
-        The best pizza.
+    <div className="text-center">
+      <h1 className="text-6xl/25 font-semibold tracking-wider text-stone-500">
+        Barney's <span className="text-yellow-500">Burger</span>
         <br />
-        Straight out of the oven, straight to you.
+        <span className="text-orange-500">
+          Sizzling hot, right when you want it
+        </span>
       </h1>
 
-      <Link to="/menu">Start ordering</Link>
+      <CreateUser />
     </div>
   );
 }

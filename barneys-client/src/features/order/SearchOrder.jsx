@@ -18,7 +18,7 @@ function SearchOrder() {
         placeholder="Search order number"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="focus:ring-opacity-50 h-8 w-[200px] rounded-full bg-orange-100 px-4 py-2 text-sm ring ring-orange-500 transition-all duration-300 placeholder:text-yellow-500 focus:ring-2 focus:ring-orange-500 focus:outline-none"
+        className="focus:ring-opacity-50 h-10 w-[250px] rounded-full bg-orange-100 px-4 py-2 text-center text-lg ring ring-orange-500 transition-all duration-300 placeholder:text-yellow-500 focus:ring-2 focus:ring-orange-500 focus:outline-none"
       />
     </form>
   );

@@ -1,6 +1,5 @@
 import Button from './Button';
 import { useNavigate } from 'react-router-dom';
-import SocialIcons from './SocialIcons';
 
 function Hero() {
   const navigate = useNavigate();
@@ -21,7 +20,7 @@ function Hero() {
         size="md"
         shape="pill"
         className="mt-25 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:ring-2 hover:ring-orange-600"
-        onClick={() => navigate('/menu')}
+        onClick={() => navigate('/orderPage')}
       >
         Order now
       </Button>

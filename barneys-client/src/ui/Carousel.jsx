@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import CarouselItem from './CarouselItem';
 import Button from './Button';
+import { FaGreaterThan, FaLessThan } from 'react-icons/fa';
 
 function Carousel({ data }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -44,7 +45,7 @@ function Carousel({ data }) {
           className="align-bottom"
           onClick={prevSlide}
         >
-          {'<'}
+          <FaLessThan className="text-3xl" />
         </Button>
         <Button
           size="lg"
@@ -53,7 +54,7 @@ function Carousel({ data }) {
           className="align-bottom"
           onClick={nextSlide}
         >
-          {'>'}
+          <FaGreaterThan className="text-3xl" />
         </Button>
       </div>
       <div className="absolute -bottom-[55%] left-1/2 flex -translate-x-75 transform gap-2">

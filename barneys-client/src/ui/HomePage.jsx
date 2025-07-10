@@ -26,8 +26,6 @@ function HomePage() {
           <Carousel data={menu} />
         </div>
       </div>
-
-      {/* <AboutUs /> */}
     </>
   );
 }
