@@ -11,7 +11,7 @@ function MainNav({ open }) {
   return (
     <nav className="flex items-center">
       <ul
-        className={`fixed top-0 left-0 h-screen w-64 transform bg-orange-100 p-8 transition-transform duration-300 ease-in-out ${open ? 'translate-x-0' : '-translate-x-full'} flex flex-col justify-center gap-12 text-center md:static md:flex md:h-auto md:w-auto md:translate-x-0 md:transform-none md:flex-row md:gap-12 md:bg-transparent md:p-0`}
+        className={`fixed top-0 left-0 h-screen w-64 transform bg-orange-100 p-8 transition-transform duration-300 ease-in-out ${open ? 'translate-x-0' : '-translate-x-full'} z-8 flex flex-col justify-center gap-12 text-center md:static md:flex md:h-auto md:w-auto md:translate-x-0 md:transform-none md:flex-row md:gap-12 md:bg-transparent md:p-0`}
       >
         <li>
           <NavLink to="/" className={textStyle}>

@@ -2,7 +2,7 @@ import BarneysLogo from '../assets/logo.png';
 
 function Logo() {
   return (
-    <div>
+    <div className="hidden md:block">
       <img src={BarneysLogo} alt="barneyslogo" className="logo-img" />
     </div>
   );
