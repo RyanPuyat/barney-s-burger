@@ -30,7 +30,7 @@ function MainNav({ open }) {
         </li>
         <li>
           <NavLink to="/contact" className={textStyle}>
-            <span>Contact Us</span>
+            <span className="whitespace-nowrap">Contact Us</span>
           </NavLink>
         </li>
       </ul>

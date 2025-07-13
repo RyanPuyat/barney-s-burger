@@ -13,14 +13,16 @@ function SearchOrder() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center">
-      <input
-        placeholder="Search order number"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        className="focus:ring-opacity-50 h-10 w-48 rounded-full bg-orange-100 px-4 py-2 text-center ring ring-orange-500 transition-all duration-300 placeholder:text-yellow-500 focus:ring-2 focus:ring-orange-500 focus:outline-none md:w-[250px] md:text-lg"
-      />
-    </form>
+    <div className="flex w-full justify-center p-4 sm:w-auto sm:text-start">
+      <form onSubmit={handleSubmit} className="flex items-center">
+        <input
+          placeholder="Search order number"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          className="focus:ring-opacity-50 h-10 w-48 rounded-full bg-orange-100 px-4 py-2 text-center ring ring-orange-500 transition-all duration-300 placeholder:text-yellow-500 focus:ring-2 focus:ring-orange-500 focus:outline-none md:w-[250px] md:text-lg"
+        />
+      </form>
+    </div>
   );
 }
 

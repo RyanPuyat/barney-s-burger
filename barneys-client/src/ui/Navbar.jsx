@@ -7,7 +7,7 @@ function Navbar({ open }) {
   const isHome = location.pathname === '/';
 
   return (
-    <div className="flex flex-row gap-50">
+    <div className="flex flex-row sm:gap-50">
       <Logo />
 
       <MainNav open={open} />

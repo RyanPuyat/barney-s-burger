@@ -1,5 +1,6 @@
 import { forwardRef } from 'react';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 
 const Button = forwardRef(
   (
@@ -11,6 +12,7 @@ const Button = forwardRef(
       isLoading = false,
       disabled = false,
       className,
+      to,
       ...props
     },
     ref,
@@ -43,6 +45,24 @@ const Button = forwardRef(
     // const shape = rounded ? 'rounded-full' : 'rounded-none';
     const shapeStyle = shapeClasses[shape] || shapeClasses['soft'];
 
+    if (to)
+      return (
+        <Link
+          to={to}
+          className={clsx(
+            base,
+            sizes[size],
+            variants[variant],
+            shapeStyle,
+            disabled && 'cursor-not-allowed opacity-50',
+            isLoading && 'relative text-transparent',
+            className,
+          )}
+        >
+          {children}
+        </Link>
+      );
+
     return (
       <button
         ref={ref}
@@ -58,15 +78,7 @@ const Button = forwardRef(
         )}
         {...props}
       >
-        {/* {iconLeft && !isLoading && <span className="mr-2">{iconLeft}</span>}
-        {isLoading ? (
-          <span className="absolute inset-0 flex items-center justify-center">
-            <span className="h-4 w-4 animate-spin rounded-full border-2 border-orange-100 border-t-transparent" />
-          </span>
-        ) : ( */}
         {children}
-        {/* )}
-        {iconRight && !isLoading && <span className="ml-2">{iconRight}</span>} */}
       </button>
     );
   },

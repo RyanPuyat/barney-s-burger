@@ -9,12 +9,12 @@ function Menu() {
 
   return (
     <>
-      <div className="min-h-[calc(100dvh-200px)] overflow-y-auto rounded-3xl border border-none bg-orange-100 p-4">
-        <div className="relative flex h-16 items-center">
-          <h1 className="absolute left-1/2 mb-4 -translate-x-1/2 transform text-3xl font-bold tracking-wider text-stone-500">
+      <div className="min-h-[calc(100dvh-200px)] space-y-5 overflow-y-auto rounded-3xl border border-none bg-orange-100 p-4">
+        <div className="flex h-16 flex-col items-center md:mr-20 md:ml-auto md:flex-row">
+          <h1 className="text-2xl font-semibold md:absolute md:left-1/2 md:-translate-x-1/2 md:text-left">
             Barney's <span className="text-orange-500">Menu</span>
           </h1>
-          <div className="mr-50 ml-auto inline-flex max-w-[150px] items-center space-x-1 truncate">
+          <div className="flex items-center gap-2 md:ml-auto">
             <span className="text-xl font-semibold text-orange-500">Hi! </span>
 
             <Username />
