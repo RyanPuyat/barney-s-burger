@@ -1,12 +1,16 @@
 import { formatCurrency } from '../../utils/helpers';
 import Button from '../../ui/Button';
-import { useDispatch } from 'react-redux';
-import { addItem } from '../cart/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem, getCurrentQuantityById } from '../cart/cartSlice';
+import DeleteItem from '../cart/DeleteItem';
+import UpdateItemQuantity from '../cart/UpdateItemQuantity';
 
 function MenuItem({ burger }) {
   const dispatch = useDispatch();
 
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = burger;
+  const currentQuantity = useSelector(getCurrentQuantityById(id));
+  const isInCart = currentQuantity > 0;
 
   function handleAddtoCart() {
     const newItem = {
@@ -37,7 +41,13 @@ function MenuItem({ burger }) {
           {!soldOut ? formatCurrency(unitPrice) : 'Sold out'}
         </p>
 
-        {!soldOut && (
+        {isInCart && (
+          <div className="flex items-center justify-between">
+            <UpdateItemQuantity />
+            <DeleteItem burgerId={id} />
+          </div>
+        )}
+        {!soldOut && !isInCart && (
           <Button
             className="mt-10 uppercase transition-all duration-300 ease-in-out hover:scale-105"
             shape="pill"

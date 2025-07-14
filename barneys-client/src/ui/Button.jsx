@@ -24,6 +24,7 @@ const Button = forwardRef(
       sm: 'px-3 py-1.5 text-sm',
       md: 'px-5 py-2 text-base',
       lg: 'px-6 py-4 text-xl',
+      round: 'px-2.5 py-1 md:px-3.5 md:py-2 text-sm font-bold',
     };
 
     const variants = {
