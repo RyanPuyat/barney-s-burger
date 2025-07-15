@@ -19,7 +19,7 @@ function MainNav({ open }) {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/menu" className={textStyle}>
+          <NavLink to="/orderPage" className={textStyle}>
             <span>Menu</span>
           </NavLink>
         </li>

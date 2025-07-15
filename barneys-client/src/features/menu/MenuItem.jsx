@@ -43,7 +43,10 @@ function MenuItem({ burger }) {
 
         {isInCart && (
           <div className="flex items-center justify-between">
-            <UpdateItemQuantity />
+            <UpdateItemQuantity
+              burgerId={id}
+              currentQuantity={currentQuantity}
+            />
             <DeleteItem burgerId={id} />
           </div>
         )}

@@ -10,7 +10,7 @@ function DeleteItem({ burgerId }) {
       <Button
         size="md"
         shape="pill"
-        className="mt-10 uppercase"
+        className="mt-10 uppercase transition-all duration-300 ease-in-out hover:scale-105"
         onClick={() => dispatch(deleteItem(burgerId))}
       >
         Delete

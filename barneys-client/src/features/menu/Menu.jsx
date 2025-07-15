@@ -20,7 +20,7 @@ function Menu() {
             <Username />
           </div>
         </div>
-        <ul className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-y-40 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <ul className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 md:grid-cols-3 md:gap-y-30 lg:grid-cols-4 xl:grid-cols-5">
           {menu.map((burger) => (
             <MenuItem burger={burger} key={burger.id} />
           ))}

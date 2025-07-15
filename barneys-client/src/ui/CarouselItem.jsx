@@ -17,7 +17,7 @@ function CarouselItem({ data, swiped, ...props }) {
           draggable="false"
           onClick={() => {
             if (swiped) return;
-            navigate('/menu');
+            navigate('/orderPage');
           }}
         />
       </div>

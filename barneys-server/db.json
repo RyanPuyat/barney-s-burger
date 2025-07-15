@@ -190,97 +190,37 @@
       "priorityPrice": 6
     },
     {
-      "id": "ABCDEF",
-      "customer": "Jonas",
-      "phone": "123456789",
-      "address": "Arroios, Lisbon , Portugal",
+      "id": "PydJwqXAg2",
+      "customer": "Khat",
+      "phone": "253454",
+      "address": "dadad",
       "priority": true,
-      "estimatedDelivery": "2027-04-25T10:00:00",
       "cart": [
         {
           "burgerId": 1,
           "name": "Cream & Crave",
           "quantity": 1,
-          "unitPrice": 4,
-          "totalPrice": 4
+          "unitPrice": 3.5,
+          "totalPrice": 3.5
         },
         {
-          "burgerId": 8,
-          "name": "BBQ Chicken",
+          "burgerId": 4,
+          "name": "Beef & Bacon Bliss",
           "quantity": 1,
-          "unitPrice": 4,
-          "totalPrice": 4
-        }
-      ],
-      "position": "-9.000,38.000",
-      "orderPrice": 8,
-      "priorityPrice": 6
-    },
-    {
-      "id": "WDghAQ0gAx",
-      "customer": "Khat",
-      "phone": "253454",
-      "address": "Jeongwang-dong, Siheung 15097, Korea (the Republic of)",
-      "priority": true,
-      "cart": [
+          "unitPrice": 3.5,
+          "totalPrice": 3.5
+        },
         {
-          "pizzaId": 12,
-          "name": "Mediterranean",
+          "burgerId": 6,
+          "name": "Cluck Haven",
           "quantity": 2,
-          "unitPrice": 16,
-          "totalPrice": 32
-        },
-        {
-          "pizzaId": 6,
-          "name": "Vegetale",
-          "quantity": 1,
-          "unitPrice": 13,
-          "totalPrice": 13
-        },
-        {
-          "pizzaId": 11,
-          "name": "Spinach and Mushroom",
-          "quantity": 1,
-          "unitPrice": 15,
-          "totalPrice": 15
+          "unitPrice": 3.5,
+          "totalPrice": 7
         }
       ],
-      "estimatedDelivery": "2025-07-02T12:41:52.106Z",
-      "orderPrice": 60,
-      "priorityPrice": 10
-    },
-    {
-      "id": "4h3AlMYjK5",
-      "customer": "Eli",
-      "phone": "253454",
-      "address": "Jeongwang-dong, Siheung 15097, Korea (the Republic of)",
-      "priority": true,
-      "cart": [
-        {
-          "pizzaId": 12,
-          "name": "Mediterranean",
-          "quantity": 2,
-          "unitPrice": 16,
-          "totalPrice": 32
-        },
-        {
-          "pizzaId": 6,
-          "name": "Vegetale",
-          "quantity": 1,
-          "unitPrice": 13,
-          "totalPrice": 13
-        },
-        {
-          "pizzaId": 11,
-          "name": "Spinach and Mushroom",
-          "quantity": 1,
-          "unitPrice": 15,
-          "totalPrice": 15
-        }
-      ],
-      "estimatedDelivery": "2025-07-02T13:49:46.729Z",
-      "orderPrice": 60,
-      "priorityPrice": 10
+      "estimatedDelivery": "2025-07-15T13:59:17.933Z",
+      "orderPrice": 14,
+      "priorityPrice": 2.8
     }
   ]
 }
