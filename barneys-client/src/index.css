@@ -29,7 +29,7 @@ body {
   background-color: #f7f7f7;
   color: #44403b;
   overflow-y: scroll;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .container {

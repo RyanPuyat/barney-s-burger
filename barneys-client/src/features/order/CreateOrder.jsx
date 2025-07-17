@@ -24,20 +24,26 @@ function CreateOrder() {
 
   const dispatch = useDispatch();
 
-  const username = useSelector((state) => state.user.username);
+  const {
+    username,
+    status: addressStatus,
+    position,
+    address,
+    error: errorAddress,
+  } = useSelector((state) => state.user);
   const cart = useSelector(getCart);
   const totalCartPrice = useSelector(getTotalCartPrice);
   const PriorityFee = withPriority ? totalCartPrice * 0.2 : 0;
   const totalPrice = totalCartPrice + PriorityFee;
 
+  const isLoadingAddress = addressStatus === 'loading';
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="px-4 py-6 md:mx-50">
+    <div className="mx-auto w-full max-w-[90%] px-4 py-6">
       <h2 className="mb-8 text-2xl font-bold tracking-widest">
         Ready to order? Let's go!
       </h2>
-      <button onClick={() => dispatch(fetchAddress())}>Test</button>
 
       <Form method="POST">
         <div className="mb-5 flex flex-col gap-2 sm:flex sm:flex-row sm:items-center">
@@ -65,13 +71,35 @@ function CreateOrder() {
 
         <div className="mb-5 flex flex-col gap-2 sm:flex sm:flex-row sm:items-center">
           <label className="text-lg sm:basis-40">Address</label>
-          <div className="grow">
+          <div className="relative grow">
             <input
               type="text"
               name="address"
+              disabled={isLoadingAddress}
+              defaultValue={address}
               required
               className="input w-full"
             />
+
+            {addressStatus === 'error' && (
+              <p className="mt-2 rounded-md bg-red-200 p-2 text-xs tracking-widest text-red-700 sm:ml-0">
+                {errorAddress}
+              </p>
+            )}
+            {!position.latitude && !position.longitude && (
+              <Button
+                shape="pill"
+                size="md"
+                disabled={isLoadingAddress}
+                onClick={(e) => {
+                  e.preventDefault();
+                  dispatch(fetchAddress());
+                }}
+                className="absolute top-[1.3rem] right-1 z-2 -translate-y-1/2 sm:top-[1.3rem] md:top-[25px]"
+              >
+                Get Position
+              </Button>
+            )}
           </div>
         </div>
 
@@ -85,14 +113,23 @@ function CreateOrder() {
             onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label htmlFor="priority" className="text-lg tracking-wider">
-            Want to yo give your order priority?
+            Want to make your order a priority?
           </label>
         </div>
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
+          <input
+            type="hidden"
+            name="position"
+            value={
+              position.longitude && position.latitude
+                ? `${position.latitude},${position.longitude}`
+                : ''
+            }
+          />
           <Button
-            disabled={isSubmitting}
+            disabled={(isSubmitting, isLoadingAddress)}
             shape="pill"
             className="uppercase transition-all duration-300 ease-in-out hover:scale-105"
           >

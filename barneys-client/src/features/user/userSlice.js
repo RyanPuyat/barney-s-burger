@@ -56,7 +56,8 @@ const userSlice = createSlice({
       })
       .addCase(fetchAddress.rejected, (state, action) => {
         state.status = 'error';
-        state.error = action.error.message;
+        state.error =
+          'Oops! We couldn’t retrieve your address. Please enter it manually.';
       }),
 });
 

@@ -33,7 +33,7 @@ function Cart() {
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="px-4 py-3 md:mx-10">
+    <div className="mx-auto w-full max-w-[90%] px-4 py-3">
       <LinkButton to="/menu">&larr; Back to menu</LinkButton>
 
       <h2 className="mt-8 text-2xl font-semibold">Your cart, {username}</h2>
