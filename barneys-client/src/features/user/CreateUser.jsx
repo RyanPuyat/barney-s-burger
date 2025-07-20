@@ -17,7 +17,7 @@ function CreateUser() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p className="mt-15 not-target:text-2xl">
+      <p className="mt-15 text-lg sm:text-2xl">
         Hey there! What should we call you before we get grilling?
       </p>
 
@@ -25,7 +25,7 @@ function CreateUser() {
         placeholder="Your full name"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        className="focus:ring-opacity-50 mt-10 h-15 w-[500px] rounded-full bg-orange-100 px-8 py-2 text-xl ring ring-orange-500 transition-all duration-300 placeholder:text-yellow-500 focus:ring-2 focus:ring-orange-500 focus:outline-none"
+        className="focus:ring-opacity-50 mt-10 h-10 w-[400px] rounded-full bg-orange-100 px-8 py-2 text-xl ring ring-orange-500 transition-all duration-300 placeholder:text-yellow-500 focus:ring-2 focus:ring-orange-500 focus:outline-none sm:h-15 sm:w-[500px]"
       />
 
       {username !== '' && (

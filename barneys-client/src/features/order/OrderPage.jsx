@@ -1,13 +1,14 @@
 import { useSelector } from 'react-redux';
 import CreateUser from '../user/CreateUser';
 import Button from '../../ui/Button';
+import SocialIcons from '../../ui/SocialIcons';
 
 function OrderPage() {
   const username = useSelector((state) => state.user.username);
 
   return (
     <div className="text-center">
-      <h1 className="text-6xl/25 font-semibold tracking-wider text-stone-500">
+      <h1 className="text-4xl/20 font-semibold tracking-wider text-stone-500 sm:text-6xl/25">
         Barney's <span className="text-yellow-500">Burger</span>
         <br />
         <span className="text-orange-500">

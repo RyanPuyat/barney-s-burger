@@ -4,7 +4,7 @@ import Logo from './Logo';
 import MainNav from './MainNav';
 
 function Navbar({ open }) {
-  const isHome = location.pathname === '/';
+  const isHome = location.pathname === '/' || location.pathname === '/about';
 
   return (
     <div className="flex flex-row sm:gap-50">
