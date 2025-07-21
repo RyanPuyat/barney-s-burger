@@ -21,9 +21,15 @@ function AppLayout() {
       {isLoading && <Loading />}
       <div className="container">
         <div className={isHome ? 'bg-layout' : 'layout'}>
-          {isHome && <img src={Image} alt="Background" className="bg-image" />}
+          {isHome && (
+            <img
+              src={Image}
+              alt="Background"
+              className="bg-image hidden xl:block"
+            />
+          )}
 
-          <div className="block md:hidden" ref={ref}>
+          <div className="mt-4 block md:hidden" ref={ref}>
             <BurgerMenu open={open} setOpen={setOpen} />
           </div>
           <div className="hidden md:block">

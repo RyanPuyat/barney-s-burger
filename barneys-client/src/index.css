@@ -48,6 +48,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   gap: 32px;
+
   /* height: 100dvh; */
 }
 .bg-image {

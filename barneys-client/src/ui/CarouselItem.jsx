@@ -13,7 +13,7 @@ function CarouselItem({ data, swiped, ...props }) {
         <img
           src={imageUrl}
           alt={name}
-          className="carousel-img h-120 w-120 touch-pan-x transition-all duration-300 ease-in-out select-none"
+          className="carousel-img h-80 w-80 touch-pan-x transition-all duration-300 ease-in-out select-none 2xl:h-120 2xl:w-120"
           draggable="false"
           onClick={() => {
             if (swiped) return;

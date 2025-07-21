@@ -16,6 +16,7 @@ function Hero() {
         <br />
         and stacked with flavor.
       </p>
+
       <Button
         size="md"
         shape="pill"

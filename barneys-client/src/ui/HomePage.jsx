@@ -6,6 +6,7 @@ import SocialIcons from './SocialIcons';
 import { getMenu } from '../services/apiRestaurant';
 import { useLoaderData, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import HeroSmallScreen from './HeroSmallScreen';
 
 function HomePage() {
   const menu = useLoaderData();
@@ -24,16 +25,18 @@ function HomePage() {
   return (
     <>
       <section>
-        <div className="grid grid-cols-[1fr_2fr]">
+        <div className="mb-70 grid grid-cols-1 2xl:mb-0 2xl:grid-cols-[1fr_2fr]">
           <div className="grid grid-rows-[auto_1fr]">
-            <div className="flex flex-col items-start">
+            <div className="hidden items-start 2xl:block">
               <Hero />
             </div>
-            <div className="flex items-baseline-last">
+            <div className="flex items-center 2xl:hidden">
+              <HeroSmallScreen />
+            </div>
+            <div className="hidden items-baseline-last 2xl:block">
               <SocialIcons />
             </div>
           </div>
-
           <div>
             <Carousel data={menu} />
           </div>
