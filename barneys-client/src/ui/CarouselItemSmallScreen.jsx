@@ -1,5 +1,6 @@
 import { formatCurrency } from '../utils/helpers/';
 import { useNavigate } from 'react-router-dom';
+import Image2 from '../assets/xl&lg.png';
 
 function CarouselItem({ data, swiped, ...props }) {
   const navigate = useNavigate();
@@ -8,12 +9,17 @@ function CarouselItem({ data, swiped, ...props }) {
   const { imageUrl, name, unitPrice } = data;
 
   return (
-    <div className="relative mt-4 ml-6 hidden 2xl:block">
-      <div {...props}>
+    <div className="flex flex-col items-center space-y-1 2xl:hidden">
+      <div className="relative -top-25 h-[510px] w-[510px] object-none lg:h-[600px] lg:w-[600px] xl:h-[600px] xl:w-[600px]">
+        <img src={Image2} alt="" />
+      </div>
+      <div
+        className="absolute bottom-120 h-[325px] w-[325px] lg:bottom-133 lg:h-[380px] lg:w-[380px] xl:bottom-133 xl:h-[380px] xl:w-[380px]"
+        {...props}
+      >
         <img
           src={imageUrl}
           alt={name}
-          className="carousel-img h-120 w-120 touch-pan-x transition-all duration-300 ease-in-out select-none"
           draggable="false"
           onClick={() => {
             if (swiped) return;
@@ -21,10 +27,10 @@ function CarouselItem({ data, swiped, ...props }) {
           }}
         />
       </div>
-      <p className="absolute -bottom-[20%] left-[30%] m-4 w-[50%] truncate p-4 text-left text-5xl font-semibold text-stone-500 transition-all duration-300 ease-in-out 2xl:text-orange-100">
+      <p className="mb-8 text-4xl font-semibold lg:text-6xl xl:text-6xl">
         {name}
       </p>
-      <p className="absolute -bottom-[30%] left-[30%] m-4 flex p-4 text-4xl font-semibold text-stone-500 transition-all duration-300 ease-in-out 2xl:text-orange-100">
+      <p className="text-3xl font-semibold lg:text-5xl xl:text-5xl">
         {formatCurrency(unitPrice)}
       </p>
     </div>

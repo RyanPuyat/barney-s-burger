@@ -6,6 +6,7 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 import Loading from './Loading';
 import Image from '../assets/BG-web.png';
+
 import BurgerMenu from './BurgerMenu';
 
 function AppLayout() {
@@ -25,7 +26,7 @@ function AppLayout() {
             <img
               src={Image}
               alt="Background"
-              className="bg-image hidden xl:block"
+              className="bg-image hidden 2xl:block"
             />
           )}
 

@@ -25,7 +25,7 @@ function HomePage() {
   return (
     <>
       <section>
-        <div className="mb-70 grid grid-cols-1 2xl:mb-0 2xl:grid-cols-[1fr_2fr]">
+        <div className="grid grid-cols-1 2xl:mb-0 2xl:grid-cols-[1fr_2fr]">
           <div className="grid grid-rows-[auto_1fr]">
             <div className="hidden items-start 2xl:block">
               <Hero />
