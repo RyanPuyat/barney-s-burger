@@ -63,11 +63,11 @@ function Carousel({ data }) {
             );
           })}
         </div>
-        <div className="absolute bottom-15 m-4 flex gap-2 2xl:right-[5%] 2xl:bottom-[30%]">
+        <div className="absolute bottom-100 m-4 flex gap-2 2xl:right-[5%] 2xl:bottom-[30%]">
           <Button
             variant="secondary"
             shape="rectangle"
-            className="px-3 py-1.5 text-sm 2xl:px-6 2xl:py-4 2xl:text-xl"
+            className="px-3 py-1.5 text-sm lg:px-6 lg:py-4 xl:px-6 xl:py-4 2xl:px-6 2xl:py-4 2xl:text-xl"
             onClick={prevSlide}
           >
             <FaLessThan className="text-xl 2xl:text-3xl" />
@@ -75,7 +75,7 @@ function Carousel({ data }) {
           <Button
             variant="secondary"
             shape="rectangle"
-            className="px-3 py-1.5 text-sm 2xl:px-6 2xl:py-4 2xl:text-xl"
+            className="px-3 py-1.5 text-sm lg:px-6 lg:py-4 xl:px-6 xl:py-4 2xl:px-6 2xl:py-4 2xl:text-xl"
             onClick={nextSlide}
           >
             <FaGreaterThan className="text-xl 2xl:text-3xl" />

@@ -30,9 +30,9 @@ function HomePage() {
             <div className="hidden items-start 2xl:block">
               <Hero />
             </div>
-            <div className="flex items-center 2xl:hidden">
+            {/* <div className="flex items-center 2xl:hidden">
               <HeroSmallScreen />
-            </div>
+            </div> */}
             <div className="hidden items-baseline-last 2xl:block">
               <SocialIcons />
             </div>
