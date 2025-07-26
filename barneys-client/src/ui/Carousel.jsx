@@ -44,7 +44,7 @@ function Carousel({ data }) {
         />
       </div>
       <div className="relative flex h-[200px] items-center justify-center 2xl:block 2xl:h-[400px]">
-        <div className="absolute bottom-35 left-1/2 flex -translate-x-1/2 transform gap-2 2xl:bottom-[32%] 2xl:-translate-x-75">
+        <div className="absolute -bottom-5 left-1/2 flex -translate-x-1/2 transform gap-2 md:bottom-5 lg:bottom-15 2xl:bottom-[37%] 2xl:-translate-x-75">
           {data?.map((_, idx) => {
             const distance = Math.abs(currentIndex - idx);
             if (distance > 1) return null;
@@ -63,7 +63,7 @@ function Carousel({ data }) {
             );
           })}
         </div>
-        <div className="absolute bottom-100 m-4 flex gap-2 2xl:right-[5%] 2xl:bottom-[30%]">
+        <div className="absolute bottom-5 m-4 hidden gap-2 lg:bottom-20 lg:flex 2xl:right-[5%] 2xl:bottom-[35%]">
           <Button
             variant="secondary"
             shape="rectangle"
