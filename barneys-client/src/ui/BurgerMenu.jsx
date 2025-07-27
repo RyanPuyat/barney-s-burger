@@ -34,7 +34,7 @@ function BurgerMenu({ open, setOpen }) {
           }`}
         />
       </button>
-      <Navbar open={open} />
+      <Navbar open={open} setOpen={setOpen} />
     </div>
   );
 }

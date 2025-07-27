@@ -13,7 +13,7 @@ function SearchOrder() {
   }
 
   return (
-    <div className="flex w-full justify-center p-4 sm:w-auto sm:text-start">
+    <div className="mr-15 flex w-full justify-center p-4 md:w-auto md:text-start">
       <form onSubmit={handleSubmit} className="flex items-center">
         <input
           placeholder="Search order number"

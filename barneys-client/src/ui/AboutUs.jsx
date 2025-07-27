@@ -9,7 +9,7 @@ function AboutUs() {
       <img
         src={Image}
         alt="About"
-        className="h-[500px] w-[450px] sm:h-[800px] sm:w-[750px]"
+        className="h-[500px] w-[450px] md:h-[800px] md:w-[750px]"
       />
     </div>
   );

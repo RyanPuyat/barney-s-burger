@@ -12,7 +12,10 @@ import BurgerMenu from './BurgerMenu';
 function AppLayout() {
   const navigation = useNavigation();
   const isLoading = navigation.state === 'loading';
-  const isHome = location.pathname === '/' || location.pathname === '/about';
+  const isHome =
+    location.pathname === '/' ||
+    location.pathname === '/about' ||
+    location.pathname === '/contact';
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
   const ref = useOutsideClick(close);
@@ -41,8 +44,11 @@ function AppLayout() {
           </main>
         </div>
       </div>
-
-      {isHome && <Footer />}
+      {isHome && (
+        <section>
+          <Footer />
+        </section>
+      )}
     </div>
   );
 }

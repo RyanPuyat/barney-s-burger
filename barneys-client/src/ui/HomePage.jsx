@@ -7,6 +7,7 @@ import { getMenu } from '../services/apiRestaurant';
 import { useLoaderData, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import HeroSmallScreen from './HeroSmallScreen';
+import Footer from './Footer';
 
 function HomePage() {
   const menu = useLoaderData();
@@ -18,6 +19,15 @@ function HomePage() {
       const target = document.getElementById('about-section');
       if (target) {
         target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (location.pathname === '/contact') {
+      const target = document.getElementById('contact-section');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'end' });
       }
     }
   }, [location.pathname]);

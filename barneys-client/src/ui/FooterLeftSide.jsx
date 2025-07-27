@@ -1,4 +1,5 @@
 import Button from './Button';
+import SocialIconsFooter from './SocialIconsFooter';
 
 function FooterLeftSide() {
   return (
@@ -19,6 +20,7 @@ function FooterLeftSide() {
           Subscribe
         </Button>
       </div>
+      <SocialIconsFooter />
     </div>
   );
 }

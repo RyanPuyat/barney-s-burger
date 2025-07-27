@@ -11,6 +11,7 @@ import CreateOrder, {
   action as actionCreateOrder,
 } from './features/order/CreateOrder';
 import { action as updateOrderAction } from './features/order/UpdateOrder';
+import Footer from './ui/Footer';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,12 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />,
+      },
+      {
+        path: '/contact',
+        loader: menuHome,
+        errorElement: <Error />,
+        element: <HomePage />,
       },
       {
         path: '/order/new',

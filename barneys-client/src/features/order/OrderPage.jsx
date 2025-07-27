@@ -22,7 +22,7 @@ function OrderPage() {
         <Button
           size="lg"
           shape="pill"
-          className="uppercase transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:ring-2 hover:ring-orange-600"
+          className="mt-8 uppercase transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:ring-2 hover:ring-orange-600"
           to="/menu"
         >
           Continue ordering, {username}
