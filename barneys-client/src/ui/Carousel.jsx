@@ -43,8 +43,8 @@ function Carousel({ data }) {
           swiped={swiped}
         />
       </div>
-      <div className="relative flex h-[200px] items-center justify-center 2xl:block 2xl:h-[400px]">
-        <div className="absolute -bottom-5 left-1/2 flex -translate-x-1/2 transform gap-2 md:bottom-5 lg:bottom-15 2xl:bottom-[37%] 2xl:-translate-x-75">
+      <div className="relative flex h-[200px] items-center justify-center space-y-2 2xl:block 2xl:h-[400px]">
+        <div className="absolute -bottom-2 left-1/2 flex -translate-x-1/2 transform gap-2 lg:bottom-11 2xl:bottom-[37%] 2xl:-translate-x-75">
           {data?.map((_, idx) => {
             const distance = Math.abs(currentIndex - idx);
             if (distance > 1) return null;
@@ -56,8 +56,8 @@ function Carousel({ data }) {
                 onClick={() => setCurrentIndex(idx)}
                 className={`transition-all duration-300 ${
                   isActive
-                    ? 'h-2 w-10 rounded-full bg-orange-500'
-                    : 'h-2 w-4 rounded-full bg-yellow-500'
+                    ? 'h-1 w-4 rounded-full bg-orange-500 lg:h-2 lg:w-10 xl:h-2 xl:w-10 2xl:h-2 2xl:w-10'
+                    : 'h-1 w-2 rounded-full bg-yellow-500 lg:h-2 lg:w-4 xl:h-2 xl:w-4 2xl:h-2 2xl:w-4'
                 }`}
               />
             );
