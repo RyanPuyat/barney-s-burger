@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:5000/api';
+// const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://barneys-burger-server.onrender.com/api';
 
 export async function getMenu() {
   const res = await fetch(`${API_URL}/menu`);
