@@ -15,7 +15,7 @@ app.use(
     origin: [
       'http://localhost:5000',
       'http://localhost:3000',
-      'https://barneysburger.vercel.app/',
+      'https://barneysburger.vercel.app',
     ],
     credentials: true,
   })
