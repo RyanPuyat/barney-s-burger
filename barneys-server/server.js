@@ -12,7 +12,11 @@ app.use(express.urlencoded({ extended: false }));
 //Cors middleware
 app.use(
   cors({
-    origin: ['http://localhost:5000', 'http://localhost:3000'],
+    origin: [
+      'http://localhost:5000',
+      'http://localhost:3000',
+      'http://localhost:4173',
+    ],
     credentials: true,
   })
 );
