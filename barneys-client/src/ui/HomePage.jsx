@@ -8,11 +8,17 @@ import { useLoaderData, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import HeroSmallScreen from './HeroSmallScreen';
 import Footer from './Footer';
+import Loading from './Loading';
 
 function HomePage() {
   const menu = useLoaderData();
+  // const navigation = useNavigation();
   // const isLoading = navigation.state === 'loading';
   const location = useLocation();
+
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
 
   useEffect(() => {
     if (location.pathname === '/about') {
