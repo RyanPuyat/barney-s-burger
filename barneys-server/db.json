@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Cream & Crave",
       "unitPrice": 3.5,
-      "imageUrl": "http://res.cloudinary.com/dyozmymsf/image/upload/cream-and-crave_mjlfnz.png",
+      "imageUrl": "https://res.cloudinary.com/dyozmymsf/image/upload/cream-and-crave_mjlfnz.png",
       "ingredients": [
         "Beef Patty",
         "Cream of Mushroom",
