@@ -1,7 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+let savedCart = [];
+try {
+  const stored = localStorage.getItem('cart');
+  if (stored) savedCart = JSON.parse(stored);
+} catch {
+  savedCart = [];
+}
+
 const initialState = {
-  cart: [],
+  cart: savedCart,
 };
 
 // in redux you can mutate state

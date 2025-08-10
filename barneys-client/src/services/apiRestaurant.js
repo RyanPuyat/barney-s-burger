@@ -1,5 +1,7 @@
 // const API_URL = 'http://localhost:5000/api';
+import { loadStripe } from '@stripe/stripe-js';
 const API_URL = import.meta.env.VITE_API_URL;
+export const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_API_KEY);
 
 export async function getMenu() {
   const res = await fetch(`${API_URL}/menu`);
@@ -19,21 +21,42 @@ export async function getOrder(id) {
   return data;
 }
 
-export async function createOrder(newOrder) {
+// export async function createOrder(newOrder) {
+//   try {
+//     const res = await fetch(`${API_URL}/order`, {
+//       method: 'POST',
+//       body: JSON.stringify(newOrder),
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//     });
+
+//     if (!res.ok) throw Error();
+//     const { data } = await res.json();
+//     return data;
+//   } catch {
+//     throw Error('Failed creating your order');
+//   }
+// }
+
+export async function createOrder(order) {
   try {
-    const res = await fetch(`${API_URL}/order`, {
+    // console.log('📦 Sending order to backend:', order);
+
+    const res = await fetch(`${API_URL}/order/create-checkout-session`, {
       method: 'POST',
-      body: JSON.stringify(newOrder),
+      body: JSON.stringify(order),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
-    if (!res.ok) throw Error();
-    const { data } = await res.json();
-    return data;
-  } catch {
-    throw Error('Failed creating your order');
+    if (!res.ok) throw Error('Stripe Checkout session failed');
+    const { url } = await res.json();
+
+    return url;
+  } catch (err) {
+    throw Error('Failed to create Stripe session');
   }
 }
 

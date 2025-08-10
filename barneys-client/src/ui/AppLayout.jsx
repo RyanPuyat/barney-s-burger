@@ -1,7 +1,7 @@
 import { Outlet, useNavigation } from 'react-router-dom';
 import { useState } from 'react';
 import useOutsideClick from '../hooks/useOutsideClick';
-
+import CartStorageSync from '../features/cart/CartStorageSync';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import Loading from './Loading';
@@ -32,6 +32,7 @@ function AppLayout() {
               className="bg-image hidden 2xl:block"
             />
           )}
+          <CartStorageSync />
 
           <div className="mt-4 block md:hidden" ref={ref}>
             <BurgerMenu open={open} setOpen={setOpen} />
