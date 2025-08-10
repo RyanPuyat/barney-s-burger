@@ -149,7 +149,7 @@ export async function action({ request }) {
 
   //to convert the forData into real data
   const data = Object.fromEntries(formData);
-  console.log('🧾 Form Data:', data);
+
   const cartPrice = JSON.parse(data.cart);
   // const isPriority = data.priority === 'true';
   const isPriority = formData.get('priority') !== null;
