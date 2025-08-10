@@ -109,7 +109,7 @@ function CreateOrder() {
             type="checkbox"
             name="priority"
             id="priority"
-            value={withPriority}
+            checked={withPriority}
             onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label htmlFor="priority" className="text-lg tracking-wider">
@@ -149,9 +149,10 @@ export async function action({ request }) {
 
   //to convert the forData into real data
   const data = Object.fromEntries(formData);
-
+  console.log('🧾 Form Data:', data);
   const cartPrice = JSON.parse(data.cart);
-  const isPriority = data.priority === 'true';
+  // const isPriority = data.priority === 'true';
+  const isPriority = formData.get('priority') !== null;
   const orderPrice = cartPrice.reduce((sum, item) => sum + item.totalPrice, 0);
   const estimatedDelivery = new Date(Date.now() + 30 * 60 * 1000).toISOString();
   const priorityPrice = Number((isPriority ? orderPrice * 0.2 : 0).toFixed(2));

@@ -10,7 +10,9 @@ import {
 } from '../../utils/helpers';
 import OrderItem from './OrderItem';
 import { useEffect } from 'react';
-import UpdateOrder from './UpdateOrder';
+import LinkButton from '../../ui/LinkButton';
+// import UpdateOrder from './UpdateOrder';
+// import Button from '../../ui/Button';
 
 function Order() {
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
@@ -84,18 +86,30 @@ function Order() {
         })}
       </ul>
 
-      <div className="space-y-2 rounded-md bg-orange-100 px-4 py-7">
-        <p className="text-lg">Price burger: {formatCurrency(orderPrice)}</p>
-        {priority && (
-          <p className="text-lg">
-            Price priority: {formatCurrency(priorityPrice)}
-          </p>
-        )}
-        <p className="text-lg font-semibold">
-          To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
-        </p>
+      <div className="flex items-center justify-between space-y-2 rounded-md bg-orange-100 px-4 py-7">
+        <div className="flex flex-col items-center gap-4 text-lg font-semibold">
+          {/* To pay on delivery: {formatCurrency(orderPrice + priorityPrice)} */}
+          <span className="rounded-full bg-green-500 px-6 py-2 tracking-wide text-orange-100 uppercase">
+            Order Complete
+          </span>
+
+          <LinkButton to="/orderPage">Order Another ➡️</LinkButton>
+        </div>
+        <div>
+          <p className="text-lg">Price burger: {formatCurrency(orderPrice)}</p>
+          {priority && (
+            <p className="text-lg">
+              Price priority: {formatCurrency(priorityPrice)}
+            </p>
+          )}
+          {
+            <p className="border-t border-dashed border-stone-300 text-lg">
+              Total Amount: {formatCurrency(orderPrice + priorityPrice)}
+            </p>
+          }
+        </div>
       </div>
-      {!priority && <UpdateOrder order={order} />}
+      {/* {!priority && <UpdateOrder order={order} />} */}
     </div>
   );
 }
