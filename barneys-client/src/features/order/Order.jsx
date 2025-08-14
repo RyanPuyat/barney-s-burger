@@ -48,7 +48,7 @@ function Order() {
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-2xl font-semibold">Order #{id} Status</h2>
 
-        <div className="space-x-2">
+        <div className="flex flex-col gap-2 sm:flex-row sm:space-x-4">
           {priority && (
             <span className="rounded-full bg-orange-500 px-6 py-2 tracking-wide text-orange-100 uppercase">
               Priority
@@ -86,16 +86,21 @@ function Order() {
         })}
       </ul>
 
-      <div className="flex items-center justify-between space-y-2 rounded-md bg-orange-100 px-4 py-7">
-        <div className="flex flex-col items-center gap-4 text-lg font-semibold">
+      <div className="flex flex-col space-y-6 rounded-md bg-orange-100 px-4 py-7 md:flex-row md:items-center md:justify-between md:space-y-0">
+        <div className="order-2 flex flex-col items-center gap-4 text-lg font-semibold md:order-1">
           {/* To pay on delivery: {formatCurrency(orderPrice + priorityPrice)} */}
           <span className="rounded-full bg-green-500 px-6 py-2 tracking-wide text-orange-100 uppercase">
             Order Complete
           </span>
 
-          <LinkButton to="/orderPage">Order Another ➡️</LinkButton>
+          <LinkButton
+            to="/orderPage"
+            className="flex justify-center md:justify-start"
+          >
+            Order Another ➡️
+          </LinkButton>
         </div>
-        <div>
+        <div className="order-1 mb-5 flex flex-col items-center text-center md:order-2 md:items-start md:text-left">
           <p className="text-lg">Price burger: {formatCurrency(orderPrice)}</p>
           {priority && (
             <p className="text-lg">
@@ -103,7 +108,7 @@ function Order() {
             </p>
           )}
           {
-            <p className="border-t border-dashed border-stone-300 text-lg">
+            <p className="text-lg">
               Total Amount: {formatCurrency(orderPrice + priorityPrice)}
             </p>
           }
