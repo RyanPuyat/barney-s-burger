@@ -12,7 +12,7 @@ function BurgerMenu({ open, setOpen }) {
     <div className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className={`absolute top-[30%] left-8 z-10 flex h-8 w-8 cursor-pointer flex-col justify-around border-none bg-transparent p-0 md:hidden ${
+        className={`absolute top-[30%] left-8 z-50 flex h-8 w-8 cursor-pointer flex-col justify-around border-none bg-transparent p-0 md:hidden ${
           open ? 'open' : ''
         }`}
       >

@@ -35,7 +35,7 @@ function CarouselItem({ data, swiped, ...props }) {
             {formatCurrency(unitPrice)}
           </span>
         </p>
-        <div className="xl: absolute -bottom-[126px] left-42 z-150 flex items-center justify-center md:-bottom-[138px] lg:-bottom-[40px] lg:left-120 xl:-bottom-[40px] xl:left-120">
+        <div className="xl: absolute -bottom-[126px] left-42 z-10 flex items-center justify-center md:-bottom-[138px] lg:-bottom-[40px] lg:left-120 xl:-bottom-[40px] xl:left-120">
           <Button
             size="md"
             shape="pill"
