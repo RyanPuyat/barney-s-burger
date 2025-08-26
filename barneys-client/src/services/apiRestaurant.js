@@ -1,49 +1,48 @@
 // const API_URL = 'http://localhost:5000/api';
 import { loadStripe } from '@stripe/stripe-js';
-const API_URL = import.meta.env.VITE_API_URL;
+const APIPRIMARY = import.meta.env.VITE_API_PRIMARY;
+const APISECONDARY = import.meta.env.VITE_API_SECONDARY;
 export const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_API_KEY);
 
 export async function getMenu() {
-  const res = await fetch(`${API_URL}/menu`);
+  try {
+    const res = await fetch(`${APIPRIMARY}/menu`);
+
+    const { data } = await res.json();
+    // console.log('PRIMARY', data);
+    return data;
+  } catch (error) {
+    console.warn('Primary failed, trying secondary...');
+    const backupRes = await fetch(`${APISECONDARY}/menu`);
+    const { data } = await backupRes.json();
+    // console.log('SECONDARY', data);
+    if (!backupRes.ok) throw new Error('Both APIs failed', error);
+    return data;
+  }
 
   // fetch won't throw error on 400 errors (e.g. when URL is wrong), so we need to do it manually. This will then go into the catch block, where the message is set
-  if (!res.ok) throw Error('Failed getting menu');
-
-  const { data } = await res.json();
-  return data;
 }
 
 export async function getOrder(id) {
-  const res = await fetch(`${API_URL}/order/${id}`);
-  if (!res.ok) throw Error(`Couldn't find order #${id}`);
-
-  const { data } = await res.json();
-  return data;
+  try {
+    const res = await fetch(`${APIPRIMARY}/order/${id}`);
+    const { data } = await res.json();
+    // console.log('PRIMARY', data);
+    return data;
+  } catch (error) {
+    const backupRes = await fetch(`${APISECONDARY}/order/${id}`);
+    const { data } = await backupRes.json();
+    // console.log('SECONDARY', data);
+    if (!backupRes.ok) throw new Error('Both APIs failed', error);
+    return data;
+  }
 }
-
-// export async function createOrder(newOrder) {
-//   try {
-//     const res = await fetch(`${API_URL}/order`, {
-//       method: 'POST',
-//       body: JSON.stringify(newOrder),
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//     });
-
-//     if (!res.ok) throw Error();
-//     const { data } = await res.json();
-//     return data;
-//   } catch {
-//     throw Error('Failed creating your order');
-//   }
-// }
 
 export async function createOrder(order) {
   try {
     // console.log('📦 Sending order to backend:', order);
 
-    const res = await fetch(`${API_URL}/order/create-checkout-session`, {
+    const res = await fetch(`${APIPRIMARY}/order/create-checkout-session`, {
       method: 'POST',
       body: JSON.stringify(order),
       headers: {
@@ -51,18 +50,31 @@ export async function createOrder(order) {
       },
     });
 
-    if (!res.ok) throw Error('Stripe Checkout session failed');
+    // if (!res.ok) throw Error('Stripe Checkout session failed');
     const { url } = await res.json();
 
     return url;
-  } catch (err) {
-    throw Error('Failed to create Stripe session');
+  } catch (error) {
+    const backupRes = await fetch(
+      `${APISECONDARY}/order/create-checkout-session`,
+      {
+        method: 'POST',
+        body: JSON.stringify(order),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    );
+
+    const { url } = await backupRes.json();
+    if (!backupRes.ok) throw Error('Stripe Checkout session failed', error);
+    return url;
   }
 }
 
 export async function updateOrder(id, updateObj) {
   try {
-    const res = await fetch(`${API_URL}/order/${id}`, {
+    const res = await fetch(`${APIPRIMARY}/order/${id}`, {
       method: 'PATCH',
       body: JSON.stringify(updateObj),
       headers: {
@@ -72,7 +84,17 @@ export async function updateOrder(id, updateObj) {
 
     if (!res.ok) throw Error();
     // We don't need the data, so we don't return anything
-  } catch (err) {
-    throw Error('Failed updating your order');
+  } catch (error) {
+    const res = await fetch(`${APISECONDARY}/order/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify(updateObj),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!res.ok) throw Error();
+
+    throw Error('Failed updating your order', error);
   }
 }
