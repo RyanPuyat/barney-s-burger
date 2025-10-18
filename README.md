@@ -47,7 +47,7 @@ Although the app is relatively simple, I chose Redux for its predictable state c
 - **Node.js + Express.js** – Lightweight and flexible server setup for handling API requests and routing.
 - **LowDB** – Used during development as a simple JSON-based database. Can be swapped with Postgres for production scalability
 
-  ### 🚀 Deployment
+### 🚀 Deployment
 
 - **Frontend** – Deployed to **Vercel**, which offers fast builds, global CDN, and seamless integration with Git.
 - **Backend** – Hosted on **DigitalOcean**, giving full control over server configuration and scalability.
